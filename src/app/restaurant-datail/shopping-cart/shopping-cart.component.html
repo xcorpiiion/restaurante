@@ -1,0 +1,52 @@
+<!--INICIO DO CARRINHO-->
+<div class="box box-solid">
+  <div class="box-header">
+    <i class="fa fa-shopping-cart"></i>
+
+    <h3 class="box-title">Carrinho</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <div class="table-responsive">
+      <table class="table">
+        <tbody>
+          <!-- *ngFor="let item of items() ele faz um binding entre o front e o codigo do compoment
+          onde ele vai no component shopping-cart.component e acessa o metodo items e para cada item ele
+          atribui valores para o let item -->
+          <tr *ngFor="let item of items()">
+            <!-- 
+              {{item.menuItem.name}} ele faz um binding usando o back end, ou seja, ele primeiro vai no item
+              que está no método items() após isso ele acessa o menuItem que está recebendo um CartItem
+              e dentro deste CartItem ele tem acesso os menuItem e ao seu nome
+             -->
+            <th>({{item.quantity}}x) {{item.menuItem.name}}</th>
+            <th style="width:60%">{{item.menuItem.name}}</th>
+            <!-- 
+              currency: 'BRL': true -> ele é um pipes,  isso significa que eu posso passar um determinado
+              filtro para ele (String Filter)
+             -->
+            <td class="text-right">{{item.value() | currency: 'BRL': true}}</td>
+            <td class="text-right">
+              <!-- 
+                (click)="removeItem(item)" -> ele chama um evento de clique, onde ao clicar ele chama o meu
+                método e executa uma ação.
+               -->
+              <a (click)="removeItem(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <th>Total:</th>
+            <td class="text-right">{{total() | currency: 'BRL': true}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="box-footer">
+    <div class="pull-right">
+      <button (click)="clear()" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
+      <a href="order.html" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
+    </div>
+  </div>
+</div>
+<!-- FIM DO CARRINHO -->

@@ -1,0 +1,18 @@
+<!--INÍCIO DO MENU -->
+<div class="col-md-9 col-xs-12">
+  <!-- /.info-box -->
+  <!-- 
+    | async -> ele me permite adicionar os dados de forma asenc
+    (add)="shoppingCart.addItem($event)" -> ele é o evento personalizado criado com o @Output
+   -->
+  <mt-menu-item *ngFor="let item of menu | async" [menuItem]="item" (add)="shoppingCart.addItem($event)"></mt-menu-item>
+</div>
+<div class="col-md-3 col-xs-12">
+  <!-- 
+     <mt-shopping-cart></mt-shopping-cart> ele é o selector de um componet, ou seja, assim eu consigo
+     acessar aquele html do compoment espeficico.
+     #shopping -> ele é um tipo de "variavel" que vai permitir que eu tenha acesso aos dados do component
+   -->
+  <mt-shopping-cart #shoppingCart></mt-shopping-cart>
+</div>
+<!-- FIM DO MENU -->
