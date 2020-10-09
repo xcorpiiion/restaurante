@@ -16,6 +16,8 @@ import { RestaurantDatailComponent } from './restaurant-datail/restaurant-datail
 import { RestaurantComponent } from './restaurants/restaurant/restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
+import { OrderComponent } from './order/order.component';
+import { FormsModule } from '@angular/forms';
 
 /**
  * @NgModule -> ele funciona como se fosse uma anotação do java
@@ -36,11 +38,13 @@ import { RestaurantsService } from './restaurants/restaurants.service';
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [

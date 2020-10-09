@@ -3,11 +3,10 @@ import { ErrorHandler } from './../app.error-handler';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { MEAT_API } from './../app.api';
+import { MEAT_API } from '../app.path.api';
 import { Restaurant } from './restaurant/restaurant/restaurant.model';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
-import { ReviewsComponent } from 'app/restaurant-datail/reviews/reviews.component';
 
 @Injectable()
 export class RestaurantsService {

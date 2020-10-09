@@ -25,6 +25,8 @@ var restaurant_datail_component_1 = require("./restaurant-datail/restaurant-data
 var restaurant_component_1 = require("./restaurants/restaurant/restaurant/restaurant.component");
 var restaurants_component_1 = require("./restaurants/restaurants.component");
 var restaurants_service_1 = require("./restaurants/restaurants.service");
+var order_component_1 = require("./order/order.component");
+var forms_1 = require("@angular/forms");
 /**
  * @NgModule -> ele funciona como se fosse uma anotação do java
  * declarations -> Todos os componentes ficam dentro deste lugar
@@ -48,11 +50,13 @@ var AppModule = /** @class */ (function () {
                 menu_component_1.MenuComponent,
                 shopping_cart_component_1.ShoppingCartComponent,
                 menu_item_component_1.MenuItemComponent,
-                reviews_component_1.ReviewsComponent
+                reviews_component_1.ReviewsComponent,
+                order_component_1.OrderComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpModule,
+                forms_1.FormsModule,
                 router_1.RouterModule.forRoot(app_routes_1.ROUTES)
             ],
             providers: [

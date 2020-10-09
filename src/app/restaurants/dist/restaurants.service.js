@@ -9,7 +9,7 @@ exports.__esModule = true;
 exports.RestaurantsService = void 0;
 var app_error_handler_1 = require("./../app.error-handler");
 var core_1 = require("@angular/core");
-var app_api_1 = require("./../app.api");
+var app_path_api_1 = require("../app.path.api");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 var RestaurantsService = /** @class */ (function () {
@@ -25,16 +25,16 @@ var RestaurantsService = /** @class */ (function () {
          * Ele me retorna os valores convertido para json atráves do .json()
          * _catch() -> ele captura erros
          */
-        return this.http.get(app_api_1.MEAT_API + "/restaurants").map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
+        return this.http.get(app_path_api_1.MEAT_API + "/restaurants").map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
     };
     RestaurantsService.prototype.findById = function (id) {
-        return this.http.get(app_api_1.MEAT_API + "/restaurants/" + id).map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
+        return this.http.get(app_path_api_1.MEAT_API + "/restaurants/" + id).map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
     };
     RestaurantsService.prototype.findReviewRestaurantById = function (id) {
-        return this.http.get(app_api_1.MEAT_API + "/restaurants/" + id + "/reviews").map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
+        return this.http.get(app_path_api_1.MEAT_API + "/restaurants/" + id + "/reviews").map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
     };
     RestaurantsService.prototype.findMenuRestaurantById = function (id) {
-        return this.http.get(app_api_1.MEAT_API + "/restaurants/" + id + "/menu").map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
+        return this.http.get(app_path_api_1.MEAT_API + "/restaurants/" + id + "/menu").map(function (response) { return response.json(); })._catch(app_error_handler_1.ErrorHandler.handleError);
     };
     RestaurantsService = __decorate([
         core_1.Injectable()
